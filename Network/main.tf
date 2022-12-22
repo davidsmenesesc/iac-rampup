@@ -1,16 +1,31 @@
 resource "aws_vpc" "main" {
-  cidr_block       = "10.0.10.0/24"
+  cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
   tags = {
     Name = "main"
   }
 }
-resource "aws_default_subnet" "default_subnet_a" {
-  availability_zone = "us-east-1b"
+resource "aws_subnet" "aws_subnet_a" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.1.0.0/24"
+
+  tags = {
+    Name = "Main"
+  }
 }
-resource "aws_default_subnet" "default_subnet_b" {
-  availability_zone = "us-east-1c"
+resource "aws_subnet" "aws_subnet_b" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.1.1.0/24"
+
+  tags = {
+    Name = "Main"
+  }
 }
-resource "aws_default_subnet" "default_subnet_c" {
-  availability_zone = "us-east-1d"
+resource "aws_subnet" "aws_subnet_c" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.1.2.0/24"
+
+  tags = {
+    Name = "Main"
+  }
 }
