@@ -1,13 +1,13 @@
 resource "aws_ecr_repository" "my_first_ecr_repo" {
   name = "dm-repo-rampup"
 }
-resource "aws_ecs_cluster" "my_cluster" {
-  name = "dm-cluster" # Naming the cluster
-}
-resource "aws_iam_role" "eScsTaskExecutionRole" {
-  name               = "ecsTaskExecutionRole"
-  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
-}
+# resource "aws_ecs_cluster" "my_cluster" {
+#   name = "dm-cluster" # Naming the cluster
+# }
+# resource "aws_iam_role" "eScsTaskExecutionRole" {
+#   name               = "ecsTaskExecutionRole"
+#   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
+# }
 
 # data "aws_iam_policy_document" "assume_role_policy" {
 #   statement {
