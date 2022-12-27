@@ -5,7 +5,7 @@ resource "aws_ecs_cluster" "my_cluster" {
   name = "dm-cluster" # Naming the cluster
 }
 resource "aws_iam_role" "eScsTaskExecutionRole" {
-  name               = "ecsTaskExecutionRole"
+  name               = "ecsTaskExecutionRol"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
